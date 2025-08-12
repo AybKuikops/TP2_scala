@@ -1,0 +1,31 @@
+# === SBT build ===
+target/
+project/target/
+project/project/
+/.bsp/
+
+
+# === Metals (Scala language server for VS Code) ===
+.metals/
+.bloop/
+.vscode/.bsp/
+
+# === VS Code ===
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json
+
+# === Logs ===
+*.log
+
+# === OS-specific ===
+.DS_Store
+Thumbs.db
+
+# === JVM garbage ===
+*.class
+*.jar
+*.war
+*.ear
