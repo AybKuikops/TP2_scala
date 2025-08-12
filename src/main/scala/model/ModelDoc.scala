@@ -28,13 +28,13 @@ abstract class Document(val title: String, val author: String, val year: Integer
 
 // subclasses inheriting from the document class
 class Book(title: String, author: String, year: Integer, genre: String) extends Document(title, author, year) {
-    def infos() = println(s"Book title: ${title}, Author: ${author}, Year: ${year}, Genre: ${genre}, Current description: ${description}")
+    def infos() = println(s" 📄 Book title: ${title}, Author: ${author}, Year: ${year}, Genre: ${genre}, Current description: ${description}")
 }
 class Magazine(title: String, author: String, year: Integer, EditionNumber: Integer) extends Document(title, author, year) {
-    def infos() = println(s"Magazine title: ${title}, Author: ${author}, Year: ${year}, Edition Number: ${EditionNumber}, Current description: ${description}")
+    def infos() = println(s" 📄 Magazine title: ${title}, Author: ${author}, Year: ${year}, Edition Number: ${EditionNumber}, Current description: ${description}")
 
 }
 
 class Comic(title: String, author: String, year: Integer, SeriesVolume: Integer) extends Document(title, author, year) {
-    def infos() = println(s"Comic title: ${title}, Author: ${author}, Year: ${year}, Series Volume: ${SeriesVolume}, Current description: ${description}")
+    def infos() = println(s" 📄 Comic title: ${title}, Author: ${author}, Year: ${year}, Series Volume: ${SeriesVolume}, Current description: ${description}")
 }
