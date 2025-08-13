@@ -3,7 +3,7 @@ import scala.collection.mutable.ListBuffer
 
 class User(val name: String) { 
     val borrowedDocs: ListBuffer[Document] = ListBuffer()// list of docs borrowed by this user
-        def borrowDocument(doc: Document): Boolean  = {  // fct used if a user want to borrow a book, it checks if it's available or not
+    def borrowDocument(doc: Document): Boolean  = {  // fct used if a user want to borrow a book, it checks if it's available or not
         if (doc.borrow()) {
             borrowedDocs += doc
             doc.isBorrowed=true // since the user will borrow the doc "doc.isborrowed should be set to true so no one can borrow this doc until it's returned"
@@ -11,7 +11,7 @@ class User(val name: String) {
             println(s"The doc ${doc.title} is added to the borrowedDocs list of ${name}!")
             true
             }
-        else {println("This doc is already borrowed :("); false }
+        else {println(s"This doc is already borrowed :( \n ${doc.description}"); false }
     }
     def returnDocument(doc: Document): Boolean  = {  // fct used if a user want to return a book, it checks if it's already returned or not 
         if (doc.returnItem() && (borrowedDocs.contains(doc))) {
