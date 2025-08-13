@@ -14,14 +14,14 @@ class User(val name: String) {
         else {println("This doc is already borrowed :("); false }
     }
     def returnDocument(doc: Document): Boolean  = {  // fct used if a user want to return a book, it checks if it's already returned or not 
-        if (doc.returnItem()) {
+        if (doc.returnItem() && (borrowedDocs.contains(doc))) {
             borrowedDocs -= doc
             doc.isBorrowed=false // set isborrowed to false so sthe others can borrow it since it's available.
             doc.description = s"The doc titled ${doc.title} is returned by ${name}. It's available now!"
             println(s"The book ${doc.title} is removed from the borrowedDocs list of ${name}!")
             true
             }
-        else {println(s"There may be a mistake because the book ${doc.title} is not borrowed by anyone!!"); false }
+        else {println(s"There may be a mistake because the book ${doc.title} is not borrowed by anyone or not in your borrowedDocs!!"); false }
     }
     def listBorrowedDocuments(): Unit = { // show lists of docs borrowed by th user
         println(s"List of documents borrowed by ${name}: \n")
